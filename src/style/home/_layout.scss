@@ -1,0 +1,20 @@
+@use "../global/colors" as *;
+@use "../global/mixins" as *;
+
+main {
+  background-color: $background;
+  height: 100%;
+  aspect-ratio: 1/2;
+  margin: 5% 0;
+  padding: 48px 32px 0;
+  header {
+    @include flex-center(column, start);
+    gap: 16px;
+    min-height: 100%;
+    h1,
+    p,
+    div {
+      width: 100%;
+    }
+  }
+}

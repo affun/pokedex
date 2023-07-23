@@ -1,0 +1,44 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $backdrop;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  @include flex-center(column, center);
+
+  color: $text;
+}
+
+a {
+  text-decoration: none;
+}
+
+input{
+  background: transparent;
+  outline: none;
+  border:none;
+  background-color:transparent;
+  box-shadow: none;
+}
+
+.big-text{
+  font-size: 1.25rem;
+  font-weight: 500;
+  word-spacing: 1px;
+}
+
+.small-text{
+  font-weight: 300;
+  font-size: 0.825rem;
+  letter-spacing: 0.5px;
+}
