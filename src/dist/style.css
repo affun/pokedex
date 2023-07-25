@@ -63,10 +63,14 @@ input {
 
 main {
   background-color: #f5fbfb;
-  height: 100%;
   aspect-ratio: 1/2;
   margin: 5% 0;
   padding: 48px 32px 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 main header {
   display: flex;
@@ -74,7 +78,7 @@ main header {
   align-items: center;
   justify-content: start;
   gap: 16px;
-  min-height: 100%;
+  margin-bottom: 24px;
 }
 main header h1,
 main header p,
@@ -112,4 +116,35 @@ main header div {
 .search form button {
   height: 100%;
   aspect-ratio: 1/1;
+}
+
+.dex-container {
+  overflow-y: auto;
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.dex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.card {
+  background: #BBD9D7;
+  max-width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  overflow: none;
 }/*# sourceMappingURL=style.css.map */

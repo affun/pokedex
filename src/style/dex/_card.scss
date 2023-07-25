@@ -1,0 +1,17 @@
+@use "../global/colors" as *;
+@use "../global/mixins" as *;
+
+.card {
+  background: $primary;
+  max-width: 100%;
+  aspect-ratio: 3/4;  
+
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  @include flex-center(column, center);
+  img {
+    max-width: 100%;
+    overflow: none;
+}
+}
