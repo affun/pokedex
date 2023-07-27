@@ -5,13 +5,48 @@ import { FaSearch } from "react-icons/fa";
 import data from "../assets/data.json";
 import { useState } from "react";
 
+interface IPokedata {
+  name: string;
+  id: number;
+  ThumbnailImage: string;
+}
+
 export default function Home() {
   const pokedex = data;
   const [pokePut, setPokePut] = useState("");
-  console.log(pokedex[0]);
+  // console.log(pokedex[0]);
 
   const handlePokePut = (e: React.KeyboardEvent<HTMLInputElement>) => {
     setPokePut(e.currentTarget.value);
+  };
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (pokePut !== "") {
+      let result = data.filter((pmon) => pmon.id == Number(pokePut));
+      if (result.length === 0) {
+        result = data.filter((pmon) => pmon.slug == pokePut.toLowerCase());
+      }
+      // const result = pokedex.filter((pmon) => pmon.id == Number(pokePut));
+      // if (result.length == 0) {
+      //   console.log("yay");
+      //   spid = [
+      //     [
+      //       pokedex.filter((pmon) => {
+      //         if (pmon.slug == pokePut) {
+      //           return pmon;
+      //         }
+      //       }),
+      //     ][0][0].id,
+      //   ];
+      // } else {
+      //   spid = [result[0].id];
+      // }
+      if (result.length !== 0) {
+        window.location.href = window.location.origin + "#" + result[0].id;
+        setPokePut("");
+      }
+    }
   };
 
   return (
@@ -22,7 +57,7 @@ export default function Home() {
           Search for a Pokémon by name or using its national pokedex number.
         </p>
         <div className="search">
-          <form>
+          <form onSubmit={handleSearch}>
             <div className="name-input-box small-text">
               <input
                 type="text"
@@ -40,19 +75,9 @@ export default function Home() {
       </header>
       <div className="dex-container">
         <div className="dex">
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
-          <Card pname={pokedex[0].name} pid={pokedex[0].id} pimg={pokedex[0].ThumbnailImage} />
+          {pokedex.map((pokemon: IPokedata, no: number) => {
+            return <Card pname={pokemon.name} pid={pokemon.id} pimg={pokemon.ThumbnailImage} />;
+          })}
         </div>
       </div>
     </main>

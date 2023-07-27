@@ -23,22 +23,31 @@ a {
   text-decoration: none;
 }
 
-input{
+input {
   background: transparent;
   outline: none;
-  border:none;
-  background-color:transparent;
+  border: none;
+  background-color: transparent;
   box-shadow: none;
 }
 
-.big-text{
+.big-text {
   font-size: 1.25rem;
   font-weight: 500;
   word-spacing: 1px;
 }
 
-.small-text{
+.small-text {
   font-weight: 300;
   font-size: 0.825rem;
   letter-spacing: 0.5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $accent;
+  border-radius: 4px;
 }
