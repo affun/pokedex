@@ -11,12 +11,13 @@ interface IPokedata {
   ThumbnailImage: string;
 }
 
+
 export default function Home() {
   const pokedex = data;
   const [pokePut, setPokePut] = useState("");
   // console.log(pokedex[0]);
 
-  const handlePokePut = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handlePokePut = (e: React.FormEvent<HTMLInputElement>) => {
     setPokePut(e.currentTarget.value);
   };
 
@@ -61,7 +62,7 @@ export default function Home() {
             <div className="name-input-box small-text">
               <input
                 type="text"
-                spellcheck="false"
+                spellCheck="false"
                 value={pokePut}
                 onChange={handlePokePut}
                 placeholder="Enter pokémon name"
