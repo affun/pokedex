@@ -149,6 +149,7 @@ main header div {
   aspect-ratio: 3/4;
   border-radius: 8px;
   box-sizing: border-box;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,4 +158,16 @@ main header div {
 .card img {
   max-width: 100%;
   overflow: none;
+}
+
+.info-page {
+  background-color: #f5fbfb;
+  aspect-ratio: 1/2;
+  margin: 5% 0;
+  padding: 48px 32px 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }/*# sourceMappingURL=style.css.map */

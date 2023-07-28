@@ -8,6 +8,7 @@
 
   border-radius: 8px;
   box-sizing: border-box;
+  cursor: pointer;
 
   @include flex-center(column, center);
   img {
