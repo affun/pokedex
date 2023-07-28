@@ -11,7 +11,6 @@ interface IPokedata {
   ThumbnailImage: string;
 }
 
-
 export default function Home() {
   const pokedex = data;
   const [pokePut, setPokePut] = useState("");
@@ -76,8 +75,10 @@ export default function Home() {
       </header>
       <div className="dex-container">
         <div className="dex">
-          {pokedex.map((pokemon: IPokedata) => {
-            return <Card pname={pokemon.name} pid={pokemon.id} pimg={pokemon.ThumbnailImage} />;
+          {pokedex.map((pokemon: IPokedata, pi: number) => {
+            return (
+              <Card pname={pokemon.name} pid={pokemon.id} pimg={pokemon.ThumbnailImage} key={pi} />
+            );
           })}
         </div>
       </div>
