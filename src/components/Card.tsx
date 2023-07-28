@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface IPokemon {
   pname: string
   pid: number
@@ -7,7 +9,7 @@ interface IPokemon {
 const Card = (props: IPokemon) => {
   return (
     <div className="card" id={`${props.pid}`}>
-      <img src={props.pimg} alt="" />
+      <Image className="img" src={props.pimg} alt="" />
       <div className="pokename small-text">{props.pname}</div>
     </div>
   );

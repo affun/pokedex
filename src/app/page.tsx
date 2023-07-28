@@ -76,7 +76,7 @@ export default function Home() {
       </header>
       <div className="dex-container">
         <div className="dex">
-          {pokedex.map((pokemon: IPokedata, no: number) => {
+          {pokedex.map((pokemon: IPokedata) => {
             return <Card pname={pokemon.name} pid={pokemon.id} pimg={pokemon.ThumbnailImage} />;
           })}
         </div>

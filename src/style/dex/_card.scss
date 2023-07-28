@@ -4,15 +4,15 @@
 .card {
   background: $primary;
   max-width: 100%;
-  aspect-ratio: 3/4;  
+  aspect-ratio: 3/4;
 
   border-radius: 8px;
   box-sizing: border-box;
   cursor: pointer;
 
   @include flex-center(column, center);
-  img {
+  .img {
     max-width: 100%;
     overflow: none;
-}
+  }
 }
